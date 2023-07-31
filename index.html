@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toggle Languages Portfolio</title>
+    <title>Toggle Language Portifolio</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -29,7 +29,7 @@
         }
 
         label{
-            left: 100px;
+            left: 50px;
             width: 3.375rem;
             height: 1.78675rem;
             position: relative;
@@ -92,65 +92,49 @@
             color: var(--color);
         }
 
-        .container .content{
-            display: none;
-            margin-top: 20px;
-        }
-
-        .content h2{
-            font-family: var(--title-font);
-            font-size: 3.5rem;         
-        }
-
-        .content p{
+        .text{
+            margin-left: 20PX;
             font-family: var(--body-font);
             font-size: 2rem;
         }
 
-        .content.contentPortuguese{
-            display: block;
-        }
-
-        input:checked ~.content.contentEnglish{
-            display: block;
-        }
-
-        input:checked ~.content.contentPortuguese{
-            display: none;
-        }
-
-        
-
-
-
-
     </style>
 </head>
-<body>
 
-    <div class="container">
-        <input type="checkbox" id="language-toggle">
-        <label for="language-toggle">
+<body>
+    <div>
+        <input onclick="myfunction()" type="checkbox" id="language-toggle" checked>
+        <label for="language-toggle" class="switch">
             <p class="pt">PT</p>
             <p class="en">EN</p>
         </label>
 
-        <div class="content contentEnglish">
-            <h2>English</h2>
-            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type
-                and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the
-                release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing
-                software like Aldus PageMaker including versions of Lorem Ipsum.</p>
-        </div>
+        <p class="text" id="mydiv">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
 
-        <div class="content contentPortuguese">
-            <h2>Portugues</h2>
-            <p>Lorem ipsum dolor sit amet . Os operadores gráficos e tipográficos sabem disso bem, na realidade, todas as profissões que lidam com o universo da comunicação têm um relacionamento estável com essas palavras, mas o que é? Lorem ipsum é um texto fofo sem qualquer sentido. É uma seqüência de palavras latinas que, como estão posicionadas, não formem frases com um sentido completo, mas dão vida a um texto de teste útil para preencher espaços que irão Posteriormente serão ocupados a partir de textos ad hoc compostos por profissionais de comunicação.</p>
-        </div>
-
+        <p class="text" id="test">I went to our house in the country with my Family. It’s a small house in a village in the mountains. We often go there at the weekends and we usually go there for a few weeks in the summer. It was really hot when we went this weekend. It was 35 degrees. I was surprised because it’s July. It’s usually cold.</p>
     </div>
     
 </body>
+
+<script>
+    function myfunction(){
+        var x=document.getElementById("mydiv");
+        if(x.innerHTML === "Lorem ipsum dolor sit amet . Os operadores gráficos e tipográficos sabem disso bem, na realidade, todas as profissões que lidam com o universo da comunicação têm um relacionamento estável com essas palavras, mas o que é? Lorem ipsum é um texto fofo sem qualquer sentido. É uma seqüência de palavras latinas que, como estão posicionadas, não formem frases com um sentido completo, mas dão vida a um texto de teste útil para preencher espaços que irão Posteriormente serão ocupados a partir de textos ad hoc compostos por profissionais de comunicação."){
+            x.innerHTML = "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+            var x=document.getElementById("mydiv")
+        }
+        else{
+            x.innerHTML = "Lorem ipsum dolor sit amet . Os operadores gráficos e tipográficos sabem disso bem, na realidade, todas as profissões que lidam com o universo da comunicação têm um relacionamento estável com essas palavras, mas o que é? Lorem ipsum é um texto fofo sem qualquer sentido. É uma seqüência de palavras latinas que, como estão posicionadas, não formem frases com um sentido completo, mas dão vida a um texto de teste útil para preencher espaços que irão Posteriormente serão ocupados a partir de textos ad hoc compostos por profissionais de comunicação."
+        }
+
+        var y=document.getElementById("test");
+        if(y.innerHTML === "I went to our house in the country with my Family. It’s a small house in a village in the mountains. We often go there at the weekends and we usually go there for a few weeks in the summer. It was really hot when we went this weekend. It was 35 degrees. I was surprised because it’s July. It’s usually cold."){
+            y.innerHTML = "Eu fui a nossa casa no pais com minha familia. É uma casa pequena numa vila na montanha. Nós frequentemente iamos lá nos finais de semanas e as vezes ficamos la por semanas no verão. Era realmente quente quando nós fomos nesse fim de semana. Fez 35 graus. Eu fiquei surpresa, porque era Julho. E normalmente esse mês é frio."
+            var y=document.getElementById("Eu fui a nossa casa no pais com minha familia. É uma casa pequena numa vila na montanha. Nós frequentemente iamos lá nos finais de semanas e as vezes ficamos la por semanas no verão. Era realmente quente quando nós fomos nesse fim de semana. Fez 35 graus. Eu fiquei surpresa, porque era Julho. E normalmente esse mês é frio.")
+        }
+        else{
+            y.innerHTML = "I went to our house in the country with my Family. It’s a small house in a village in the mountains. We often go there at the weekends and we usually go there for a few weeks in the summer. It was really hot when we went this weekend. It was 35 degrees. I was surprised because it’s July. It’s usually cold."
+        }
+    }
+</script>
 </html>
